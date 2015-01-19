@@ -22,8 +22,8 @@ module Wechat
       AccessToken.new MultiJson.load(response.body)
     end
 
-    def get_jsapi_ticket(access_token)
-
+    def get_auth_client
+      AuthClient.new(appid, secret)
     end
 
     def connection
