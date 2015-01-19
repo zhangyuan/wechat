@@ -29,6 +29,18 @@ module Wechat
       Digest::SHA1.hexdigest(text)
     end
 
+    def get_config(jsapi_ticket, url, appid, api_list, options = {})
+      timestamp = (options[:timestamp] || Time.now).to_i
+      noncestr = options[:noncestr] || SecureRandom.hex(10)
+      signature = sign(jsapi_ticket, noncestr, timestamp, url)
+      {
+        appId: appid,
+        timestamp: timestamp,
+        signature: signature,
+        jsApiList: api_list
+      }
+    end
+
     def connection
       @connection ||= begin
                         conn = Faraday.new do |faraday|
