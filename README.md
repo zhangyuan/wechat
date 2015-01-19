@@ -70,17 +70,13 @@ class SessionsController < ApplicationController
   private
 
   def auth_client
-    @auth_client ||= Wechat::AuthClient.new(APP_ID, APP_SECRET)
+    @auth_client ||= Wechat::Client.new(APP_ID, APP_SECRET).get_auth_client
   end
   
   def state
     session[:state] ||= SecureRandom.hex(3)
   end
 end
-=======
-```ruby
-    client = Wechat::Client.new("APPID", "APPSECRET")
-```
 
 ## Contributing
 
