@@ -23,7 +23,6 @@ Or install it yourself as:
 ## Usage
 
 ### Fetch access token
-<<<<<<< HEAD
 
 ```ruby
 client = Wechat::Client.new("APPID", "APPSECRET")
