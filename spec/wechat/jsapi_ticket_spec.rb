@@ -30,11 +30,11 @@ describe 'jsapi ticket' do
     ticket = "sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg"
     jsapi = Wechat::JsApi.new
 
-    allow(Time).to receive(:now).and_return(Time.new(2000, 1, 1))
+    allow(Time).to receive(:now).and_return(Time.new(2010,1,1, 11, 00, 00, "+00:00"))
     allow(SecureRandom).to receive(:hex).and_return("63828a411458c5455a4c")
 
     config = jsapi.get_config(ticket, "http://wx.qq.com", "APPID", ["previewImage"])
 
-    expect(MultiJson.encode(config)).to eq(%Q({"appId":"APPID","timestamp":946656000,"signature":"1b9a7d9df8143b30521b0fba5fa313bab8beb39a","jsApiList":["previewImage"]}))
+    expect(MultiJson.encode(config)).to eq(%Q({"appId":"APPID","timestamp":1262343600,"signature":"bac3e183806b8e69743c8583221fd7712dd93175","jsApiList":["previewImage"]}))
     end
 end
