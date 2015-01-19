@@ -16,12 +16,25 @@ module Wechat
       Ticket.new MultiJson.load(response.body)
     end 
 
+    def sign(jsapi_ticket, noncestr, timestamp, url)
+      params = {
+        noncestr: noncestr,
+        timestamp: timestamp,
+        jsapi_ticket: jsapi_ticket,
+        url: url
+      }
+
+      text = params.keys.sort.map {|key| "#{key}=#{params[key]}"}.join('&')
+      
+      Digest::SHA1.hexdigest(text)
+    end
+
     def connection
       @connection ||= begin
                         conn = Faraday.new do |faraday|
                           faraday.adapter  Faraday.default_adapter
                         end
                       end
-    end 
+    end
   end 
 end
