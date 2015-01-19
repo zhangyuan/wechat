@@ -7,10 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "wechat"
   spec.version       = Wechat::VERSION
   spec.authors       = ["Yuan Cheung"]
-  spec.email         = ["zhangyuan@users.noreply.github.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.email         = ["advanimal@gmail.com"]
+  spec.summary       = %q{Simple WeChat API wrapper}
+  spec.homepage      = "https://github.com/zhangyuan/wechat"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
