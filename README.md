@@ -73,6 +73,7 @@ class SessionsController < ApplicationController
     session[:state] ||= SecureRandom.hex(3)
   end
 end
+```
 
 ## Contributing
 
