@@ -1,5 +1,7 @@
 # Wechat
 
+[![Build Status](https://travis-ci.org/zhangyuan/wechat.svg)](https://travis-ci.org/zhangyuan/wechat)
+
 Simple Wechat Api Wrapper.
 
 ## Installation
@@ -21,6 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ### Fetch access token
+<<<<<<< HEAD
 
 ```ruby
 client = Wechat::Client.new("APPID", "APPSECRET")
@@ -75,6 +78,9 @@ class SessionsController < ApplicationController
     session[:state] ||= SecureRandom.hex(3)
   end
 end
+=======
+```ruby
+    client = Wechat::Client.new("APPID", "APPSECRET")
 ```
 
 ## Contributing
