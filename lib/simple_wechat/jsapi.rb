@@ -1,4 +1,4 @@
-module Wechat
+module SimpleWechat
   class JsApi
     class Ticket
       ATTRIBUTES = %W(errcode errmsg ticket expires_in).freeze

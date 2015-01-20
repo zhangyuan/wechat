@@ -1,4 +1,4 @@
-module Wechat
+module SimpleWechat
   class Client
     class AccessToken
       ATTRIBUTES = %W(access_token expires_in errcode errmsg).freeze

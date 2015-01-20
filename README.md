@@ -1,4 +1,4 @@
-# Wechat
+# SimpleWechat
 
 [![Build Status](https://travis-ci.org/zhangyuan/wechat.svg)](https://travis-ci.org/zhangyuan/wechat)
 
@@ -9,19 +9,23 @@ Simple Wechat Api Wrapper.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'wechat', git: 'https://github.com/zhangyuan/wechat'
+gem 'simple_wechat'
 ```
 
 And then execute:
 
     $ bundle
 
+Or install it yourself as:
+
+    $ gem install wechat
+
 ## Usage
 
 ### Fetch access token
 
 ```ruby
-client = Wechat::Client.new("APPID", "APPSECRET")
+client = SimpleWechat::Client.new("APPID", "APPSECRET")
 access_token = client.get_access_token  
 # access_token and expires_in are wrapped in access_token.
 ```
@@ -29,7 +33,7 @@ access_token = client.get_access_token
 ### Fetch jsapi ticket
 
 ```ruby
-jsapi = Wechat::JsApi.new
+jsapi = SimpleWechat::JsApi.new
 ticket = jsapi.get_ticket("ACCESS_TOKEN")
 # ticket, errcode, errmsg, expires_in are wrapped in ticket.
 ```
@@ -38,7 +42,7 @@ ticket = jsapi.get_ticket("ACCESS_TOKEN")
 
 ```ruby
 ticket = "sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg"
-jsapi = Wechat::JsApi.new
+jsapi = SimpleWechat::JsApi.new
 config = jsapi.get_config(ticket, "http://wx.qq.com", "APPID", ["previewImage"])
 # now MultiJson.encode(config) can be passed into function wx.config() in javascript.
 ```
@@ -66,7 +70,7 @@ class SessionsController < ApplicationController
   private
 
   def auth_client
-    @auth_client ||= Wechat::Client.new(APP_ID, APP_SECRET).get_auth_client
+    @auth_client ||= SimpleWechat::Client.new(APP_ID, APP_SECRET).get_auth_client
   end
   
   def state
@@ -77,7 +81,7 @@ end
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/wechat/fork )
+1. Fork it ( https://github.com/zhangyuan/wechat/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

@@ -1,6 +1,6 @@
 require "cgi"
 
-module Wechat
+module SimpleWechat
   class AuthClient
     class AccessToken
       ATTRIBUTES = %w(access_token expires_in refresh_token openid scope errcode errmsg).freeze

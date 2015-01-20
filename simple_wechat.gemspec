@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'wechat/version'
+require 'simple_wechat/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "wechat"
-  spec.version       = Wechat::VERSION
+  spec.name          = "simple_wechat"
+  spec.version       = SimpleWechat::VERSION
   spec.authors       = ["Yuan Cheung"]
   spec.email         = ["advanimal@gmail.com"]
   spec.summary       = %q{Simple WeChat API wrapper}

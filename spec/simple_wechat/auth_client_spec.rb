@@ -1,8 +1,8 @@
 require File.expand_path("../../spec_helper", __FILE__)
 
-RSpec.describe Wechat::AuthClient do
+RSpec.describe SimpleWechat::AuthClient do
   it 'should generate authorize_url' do
-    client = Wechat::Client.new("theappid", "thesecret").get_auth_client
+    client = SimpleWechat::Client.new("theappid", "thesecret").get_auth_client
     authorize_url = client.authorize_url("http://example.com/wechat", "999")
     expected_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=theappid&redirect_uri=http%3A%2F%2Fexample.com%2Fwechat&response_type=code&scope=snsapi_base&state=999#wechat_redirect" 
     expect(authorize_url).to eq(expected_url)
@@ -10,7 +10,7 @@ RSpec.describe Wechat::AuthClient do
 
   context "correct params" do
     it 'should get token' do
-      client = Wechat::AuthClient.new("theappid", "thesecret")
+      client = SimpleWechat::AuthClient.new("theappid", "thesecret")
       body = %q(
       {
         "access_token":"ACCESS_TOKEN",
@@ -34,7 +34,7 @@ RSpec.describe Wechat::AuthClient do
 
   context "invalid params" do
     it 'should get error' do
-      client = Wechat::AuthClient.new("theappid", "thesecret")
+      client = SimpleWechat::AuthClient.new("theappid", "thesecret")
       body = %q(
       {
         "errcode": 40029,

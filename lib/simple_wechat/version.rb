@@ -1,3 +1,3 @@
-module Wechat
+module SimpleWechat
   VERSION = "0.0.1"
 end

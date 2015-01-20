@@ -6,7 +6,7 @@ describe 'jsapi ticket' do
 
     stub_request(:get, "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi").to_return(body: body)
 
-    jsapi = Wechat::JsApi.new
+    jsapi = SimpleWechat::JsApi.new
 
     ticket = jsapi.get_ticket("ACCESS_TOKEN")
 
@@ -19,7 +19,7 @@ describe 'jsapi ticket' do
 
   it "signs params with ticket" do
     ticket = "sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg"
-    jsapi = Wechat::JsApi.new
+    jsapi = SimpleWechat::JsApi.new
 
     signature = jsapi.sign(ticket, "Wm3WZYTPz0wzccnW", "1414587457", "http://mp.weixin.qq.com")
 
@@ -28,7 +28,7 @@ describe 'jsapi ticket' do
 
   it 'gets config' do
     ticket = "sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg"
-    jsapi = Wechat::JsApi.new
+    jsapi = SimpleWechat::JsApi.new
 
     allow(Time).to receive(:now).and_return(Time.new(2010,1,1, 11, 00, 00, "+00:00"))
     allow(SecureRandom).to receive(:hex).and_return("63828a411458c5455a4c")
