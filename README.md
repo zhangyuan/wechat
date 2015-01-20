@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install wechat
+    $ gem install simple_wechat
 
 ## Usage
 
