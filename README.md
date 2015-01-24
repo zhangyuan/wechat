@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/zhangyuan/wechat.svg)](https://travis-ci.org/zhangyuan/wechat)
 
+[![Build Status](https://snap-ci.com/zhangyuan/wechat/branch/master/build_image)](https://snap-ci.com/zhangyuan/wechat/branch/master)
+
 Simple Wechat Api Wrapper.
 
 ## Installation
