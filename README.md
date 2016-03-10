@@ -4,6 +4,8 @@
 
 [![Build Status](https://snap-ci.com/zhangyuan/wechat/branch/master/build_image)](https://snap-ci.com/zhangyuan/wechat/branch/master)
 
+[![Code Climate](https://codeclimate.com/github/zhangyuan/wechat/badges/gpa.svg)](https://codeclimate.com/github/zhangyuan/wechat)
+
 Simple Wechat Api Wrapper.
 
 ## Installation
