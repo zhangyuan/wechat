@@ -6,6 +6,8 @@
 
 [![Code Climate](https://codeclimate.com/github/zhangyuan/wechat/badges/gpa.svg)](https://codeclimate.com/github/zhangyuan/wechat)
 
+[![Test Coverage](https://codeclimate.com/github/zhangyuan/wechat/badges/coverage.svg)](https://codeclimate.com/github/zhangyuan/wechat/coverage)
+
 Simple Wechat Api Wrapper.
 
 ## Installation
